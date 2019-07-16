@@ -1,1 +1,1 @@
-web: gunicorn secondprojectup.wsgi --log-file -
+web: gunicorn scond_project.wsgi --log-file -
