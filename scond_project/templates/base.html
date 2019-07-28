@@ -29,7 +29,7 @@
     </head>
     <body>
         <nav class="navbar navbar-dark bg-dark navbar-inner">
-            <a class="navbar-brand" href="{% url 'home' %}">이곳은 LJY의 블로그 입니다.</a>
+            <a class="navbar-brand" href="{% url 'home' %}">LJY의 블로그 입니다.</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -67,12 +67,9 @@
                 </ul>
             </div>
         </nav>
-        <div style="text-align:center;">
-        <img src="https://picsum.photos/id/237/200/300" style="margin-top:5px;">
-        <p style="font-size:20px;">ljy Blog입니당.</p></td>
-          
-        </div>
         
-    {% block content %}{% endblock %}
+        
+    {% block content %}
+    {% endblock %}
     </body>
 </html>

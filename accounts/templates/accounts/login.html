@@ -9,19 +9,19 @@
 {% endif %}
 
 <div style="text-align: center;">
-<h1>Login</h1>
-<form method="POST" action="{% url 'login'%}">
+<h1>로그인</h1>
+<form method="POST" action="{% url 'login'%}" >
     {% csrf_token %}
-    Username:
+    아이디
     <br>
-    <input name="username" type="text" value="">
+    <input name="username" type="text" value="" style="width: 200px;">
     <br>
-    Password:
+    비밀번호
     <br>
-    <input name="password" type="password" value="">
+    <input name="password" type="password" value="" style="width: 200px;">
     <br>
     <br>
-    <input class="btn btn-primary" type="submit" value="Login">
+    <input class="btn btn-primary" type="submit" value="Login" style="width: 200px;">
 </form>
 </div>
 {% endblock %}

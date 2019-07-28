@@ -3,24 +3,24 @@
 {% block content %}
 
 <div style="text-align: center;">
-<h1>Sign Up!</h1>
+<h1>환영합니다!</h1>
 
 <form method="POST" action="{% url 'signup'%}">
     {% csrf_token %} <!---url로 파일접근하는 것을 방지하는 것--->
-    Username:
+    아이디를 입력해주세요!
     <br>
     <input name="username" type="text" value="">
     <br>
-    Password:
+    비밀번호를 입력
     <br>
     <input name="password1" type="password" value="">
     <br>
-    Confirm Password:
+    비밀번호를 확인
     <br>
     <input name="password2" type="password" value="">
     <br>
     <br>
-    <input class="btn btn-primary" type="submit" value="Sign Up!">
+    <input class="btn btn-primary" type="submit" value="Sign Up!" style="width: 185px;">
 </form>
 </div>
 
