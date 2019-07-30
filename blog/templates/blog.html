@@ -1,16 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-      <div style="text-align:center;">
-      <img src="https://picsum.photos/id/237/200/300" style="margin-top:5px;">
-      <p style="font-size:20px;">ljy Blog입니당.</p></td>
-      
+
+<div>
+
+
+      <div style="margin-top:5px; height: 200px; ">
+        <div style="text-align:center;">
+        <h1 style="font-family: WIDEl; font-size: 200px;">LJY Blog</h1>
+        </div>
       </div>
-      {% for blog in blogs.all %}
-      <div class="container" style="border:1px solid red; margin-top:10px;">
-        <h3 style="margin-top: 10px;">{{ blog.title }}</h3>
-        <p>{{ blog.pub_date }}</p>
-        <p>{{ blog.summary }}<a href={{blog.id}}>....more</a></p>
+      {{ request.path }}  
+      {{ request.get_full_path }} 
+      <div style="margin: 10px 0px; text-align:center; font-family: Consolas, monospace; font-style: italic;font-size: 13px; width: 50%; margin-left: 25%">
+        {% for blog in blogs.all %}
+          {% if forloop.counter|divisibleby:3 %}
+          <div class="d" style="border: 0.4em inset #009688; margin-bottom: 10px;">
+          {% elif forloop.counter|divisibleby:2 %}
+          <div class="b" style="border: thick dotted #f44336; margin-bottom: 10px;">
+          {% else %}
+          <div class="e" style="border: 5px ridge #ff5722; margin-bottom: 10px;">
+          {% endif %}
+          <h3 style="margin-top: 10px;">{{ blog.title }}</h3>
+          <p>{{ blog.pub_date }}</p>
+          <p>{{ blog.summary }}
+            <a href=  {% if request.path == '/' %} 
+                        blog/{{blog.id}} 
+                      {% else %} 
+                      {{blog.id}} 
+                      {% endif %}>
+                      ....more
+                    </a>
+          </p>
+          </div>
+        {% endfor %}
       </div>
-      {% endfor %}
+  </div>
+
 {% endblock %}
