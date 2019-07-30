@@ -5,9 +5,10 @@
 <div>
 
 
-      <div style="margin-top:5px; height: 200px; ">
+      <div style="margin-top:5px; height: 200px; margin-bottom: 35px;">
         <div style="text-align:center;">
-        <h1 style="font-family: WIDEl; font-size: 200px;">LJY Blog</h1>
+        <h1 style="font-family: WIDEl; font-size: 200px; ">LJY Blog</h1>
+        <a href={% if request.path == '/' %} blog/new {% else %} new {% endif %} class="btn btn-dark" style="margin-left:45%;">글쓰기</a>
         </div>
       </div>
       {{ request.path }}  
@@ -29,7 +30,7 @@
                       {% else %} 
                       {{blog.id}} 
                       {% endif %}>
-                      ....more
+                      더 보기
                     </a>
           </p>
           </div>
